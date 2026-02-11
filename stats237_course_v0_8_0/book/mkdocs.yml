@@ -1,0 +1,53 @@
+site_name: Stats 237 — Executable Course Reader
+site_description: Slides + handwritten notes + HW/finals → narrative discourse + executable quant library
+repo_name: stats237-course
+
+# build outputs into repo-level build/
+docs_dir: docs
+site_dir: ../build/site
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.tracking
+    - content.code.copy
+
+plugins:
+  - search
+  - mkdocs-jupyter:
+      execute: false
+      allow_errors: false
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - footnotes
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Home: index.md
+  - Course Story: course_story.md
+  - Chapters:
+      - Overview: chapters/index.md
+      - Probability & Conditioning: chapters/01_probability.md
+      - No-Arbitrage & Replication: chapters/02_no_arb.md
+      - Binomial Model: chapters/03_binomial.md
+      - Black–Scholes: chapters/04_black_scholes.md
+      - Monte Carlo & Variance Reduction: chapters/05_mc_vr.md
+  - Notebooks:
+      - Black–Scholes + Greeks: notebooks/01_black_scholes.ipynb
+      - Binomial (CRR): notebooks/02_binomial.ipynb
+      - MC Variance Reduction: notebooks/03_mc_vr.ipynb
+  - API: api.md
+  - Reproducibility: reproducibility.md
+  - Generated:
+      - Materials Index: _generated/materials_index.md
+      - Function Index: _generated/function_index.md
