@@ -1,0 +1,806 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Stats237 Quant API",
+    "version": "1.2.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Response Health Health Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/meta": {
+      "get": {
+        "summary": "Meta",
+        "operationId": "meta_meta_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Response Meta Meta Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/price/black_scholes": {
+      "post": {
+        "summary": "Price Black Scholes",
+        "operationId": "price_black_scholes_price_black_scholes_post",
+        "parameters": [
+          {
+            "name": "X-Request-Id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Request-Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BSRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Response Price Black Scholes Price Black Scholes Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/greeks/black_scholes": {
+      "post": {
+        "summary": "Greeks Black Scholes",
+        "operationId": "greeks_black_scholes_greeks_black_scholes_post",
+        "parameters": [
+          {
+            "name": "X-Request-Id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Request-Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BSRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Response Greeks Black Scholes Greeks Black Scholes Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/implied_vol": {
+      "post": {
+        "summary": "Implied Vol Endpoint",
+        "operationId": "implied_vol_endpoint_implied_vol_post",
+        "parameters": [
+          {
+            "name": "X-Request-Id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Request-Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImpliedVolRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Response Implied Vol Endpoint Implied Vol Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/price/binomial": {
+      "post": {
+        "summary": "Price Binomial",
+        "operationId": "price_binomial_price_binomial_post",
+        "parameters": [
+          {
+            "name": "X-Request-Id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Request-Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BinomialRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Response Price Binomial Price Binomial Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mc/asian/arithmetic_call": {
+      "post": {
+        "summary": "Mc Asian Arithmetic Call",
+        "operationId": "mc_asian_arithmetic_call_mc_asian_arithmetic_call_post",
+        "parameters": [
+          {
+            "name": "X-Request-Id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Request-Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AsianMCRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Response Mc Asian Arithmetic Call Mc Asian Arithmetic Call Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mc/basket/call": {
+      "post": {
+        "summary": "Mc Basket Call",
+        "operationId": "mc_basket_call_mc_basket_call_post",
+        "parameters": [
+          {
+            "name": "X-Request-Id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Request-Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BasketMCRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Response Mc Basket Call Mc Basket Call Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AsianMCRequest": {
+        "properties": {
+          "S0": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "S0"
+          },
+          "K": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "K"
+          },
+          "r": {
+            "type": "number",
+            "title": "R"
+          },
+          "T": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "T"
+          },
+          "sigma": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Sigma"
+          },
+          "n_obs": {
+            "type": "integer",
+            "maximum": 5000.0,
+            "minimum": 1.0,
+            "title": "N Obs",
+            "default": 50
+          },
+          "n_paths": {
+            "type": "integer",
+            "maximum": 5000000.0,
+            "minimum": 1000.0,
+            "title": "N Paths",
+            "default": 20000
+          },
+          "seed": {
+            "type": "integer",
+            "title": "Seed",
+            "default": 123
+          },
+          "method": {
+            "type": "string",
+            "enum": [
+              "plain",
+              "lhs",
+              "sobol",
+              "halton"
+            ],
+            "title": "Method",
+            "default": "plain"
+          },
+          "qmc_scramble": {
+            "type": "boolean",
+            "title": "Qmc Scramble",
+            "default": true
+          },
+          "antithetic": {
+            "type": "boolean",
+            "title": "Antithetic",
+            "default": true
+          },
+          "use_control_variate": {
+            "type": "boolean",
+            "title": "Use Control Variate",
+            "default": true
+          },
+          "use_extra_control": {
+            "type": "boolean",
+            "title": "Use Extra Control",
+            "default": true
+          },
+          "alpha": {
+            "type": "number",
+            "title": "Alpha",
+            "default": 0.05
+          }
+        },
+        "type": "object",
+        "required": [
+          "S0",
+          "K",
+          "r",
+          "T",
+          "sigma"
+        ],
+        "title": "AsianMCRequest"
+      },
+      "BSRequest": {
+        "properties": {
+          "S0": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "S0"
+          },
+          "K": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "K"
+          },
+          "r": {
+            "type": "number",
+            "title": "R"
+          },
+          "T": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "T"
+          },
+          "sigma": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Sigma"
+          },
+          "is_call": {
+            "type": "boolean",
+            "title": "Is Call",
+            "default": true
+          }
+        },
+        "type": "object",
+        "required": [
+          "S0",
+          "K",
+          "r",
+          "T",
+          "sigma"
+        ],
+        "title": "BSRequest"
+      },
+      "BasketMCRequest": {
+        "properties": {
+          "S0": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array",
+            "title": "S0"
+          },
+          "w": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array",
+            "title": "W"
+          },
+          "K": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "K"
+          },
+          "r": {
+            "type": "number",
+            "title": "R"
+          },
+          "T": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "T"
+          },
+          "vol": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array",
+            "title": "Vol"
+          },
+          "corr": {
+            "items": {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            "type": "array",
+            "title": "Corr"
+          },
+          "n_paths": {
+            "type": "integer",
+            "maximum": 5000000.0,
+            "minimum": 1000.0,
+            "title": "N Paths",
+            "default": 20000
+          },
+          "seed": {
+            "type": "integer",
+            "title": "Seed",
+            "default": 123
+          },
+          "lhs": {
+            "type": "boolean",
+            "title": "Lhs",
+            "default": false
+          },
+          "method": {
+            "type": "string",
+            "enum": [
+              "plain",
+              "lhs",
+              "sobol",
+              "halton"
+            ],
+            "title": "Method",
+            "default": "plain"
+          },
+          "qmc_scramble": {
+            "type": "boolean",
+            "title": "Qmc Scramble",
+            "default": true
+          },
+          "antithetic": {
+            "type": "boolean",
+            "title": "Antithetic",
+            "default": true
+          },
+          "use_control_variate": {
+            "type": "boolean",
+            "title": "Use Control Variate",
+            "default": true
+          },
+          "use_extra_control": {
+            "type": "boolean",
+            "title": "Use Extra Control",
+            "default": true
+          },
+          "alpha": {
+            "type": "number",
+            "title": "Alpha",
+            "default": 0.05
+          }
+        },
+        "type": "object",
+        "required": [
+          "S0",
+          "w",
+          "K",
+          "r",
+          "T",
+          "vol",
+          "corr"
+        ],
+        "title": "BasketMCRequest"
+      },
+      "BinomialRequest": {
+        "properties": {
+          "S0": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "S0"
+          },
+          "K": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "K"
+          },
+          "r": {
+            "type": "number",
+            "title": "R"
+          },
+          "T": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "T"
+          },
+          "sigma": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Sigma"
+          },
+          "n": {
+            "type": "integer",
+            "maximum": 10000.0,
+            "minimum": 1.0,
+            "title": "N",
+            "default": 100
+          },
+          "is_call": {
+            "type": "boolean",
+            "title": "Is Call",
+            "default": true
+          },
+          "exercise": {
+            "type": "string",
+            "enum": [
+              "european",
+              "american"
+            ],
+            "title": "Exercise",
+            "default": "european"
+          }
+        },
+        "type": "object",
+        "required": [
+          "S0",
+          "K",
+          "r",
+          "T",
+          "sigma"
+        ],
+        "title": "BinomialRequest"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "ImpliedVolRequest": {
+        "properties": {
+          "price": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Price"
+          },
+          "is_call": {
+            "type": "boolean",
+            "title": "Is Call",
+            "default": true
+          },
+          "S0": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "S0"
+          },
+          "K": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "K"
+          },
+          "r": {
+            "type": "number",
+            "title": "R"
+          },
+          "T": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "T"
+          },
+          "vol_low": {
+            "type": "number",
+            "title": "Vol Low",
+            "default": 1e-06
+          },
+          "vol_high": {
+            "type": "number",
+            "title": "Vol High",
+            "default": 5.0
+          },
+          "tol": {
+            "type": "number",
+            "title": "Tol",
+            "default": 1e-10
+          },
+          "max_iter": {
+            "type": "integer",
+            "title": "Max Iter",
+            "default": 200
+          }
+        },
+        "type": "object",
+        "required": [
+          "price",
+          "S0",
+          "K",
+          "r",
+          "T"
+        ],
+        "title": "ImpliedVolRequest"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}
