@@ -1,0 +1,5 @@
+services:
+  stats237-api:
+    build: .
+    ports:
+      - "8000:8000"
