@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stats237-quantlib"
+version = "0.10.0"
+description = "Stats 237 quant functions (pricing, binomial, Black-Scholes, Monte Carlo) with tests."
+requires-python = ">=3.11"
+dependencies = ["numpy>=2.0.0", "scipy>=1.12.0"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["stats237_quantlib*"]
+
+[project.optional-dependencies]
+docs = ["mkdocs>=1.6.0", "mkdocs-material>=9.5.0", "mkdocs-jupyter>=0.24.0", "pymdown-extensions>=10.8"]
+perf = ["numba>=0.60.0"]
