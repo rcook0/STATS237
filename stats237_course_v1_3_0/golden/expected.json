@@ -1,0 +1,10 @@
+{
+  "asian_mc_ci_hw_cv": 0.002657760661190167,
+  "asian_mc_price_cv": 5.363935842061656,
+  "basket_mc_ci_hw_cv": 0.009090895608727223,
+  "basket_mc_price_cv": 7.870558879959207,
+  "bs_call_price": 8.433318690109608,
+  "bs_put_price": 7.438302065026413,
+  "crr_american_put": 8.668273613254852,
+  "implied_vol_call": 0.20000000001470997
+}
